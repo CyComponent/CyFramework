@@ -1,0 +1,52 @@
+{
+  "name": "cyto-framework",
+  "version": "0.0.2",
+  "description": "A framework for deploying widgets and connecting to services in cytoscape.",
+  "main": "build/app.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --content-base build",
+    "build": "webpack --progress --colors",
+    "clean": "rm build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cytoscape-ci/cytoFramework.git"
+  },
+  "keywords": [
+    "cytoframework"
+  ],
+  "author": "Eric Sage <eric.david.sage@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cytoscape-ci/cytoFramework/issues"
+  },
+  "homepage": "https://github.com/cytoscape-ci/cytoFramework#readme",
+  "dependencies": {
+    "immutable": "^3.7.6",
+    "redux": "^3.0.5",
+    "redux-logger": "^2.3.1",
+    "redux-thunk": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "react-hot-loader": "^1.3.0",
+    "redux-devtools": "^3.0.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
