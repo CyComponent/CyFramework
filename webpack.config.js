@@ -1,12 +1,12 @@
 var path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/app.jsx"),
+  entry: path.resolve(__dirname, "src/CyFramework.js"),
   output: {
     path: path.resolve(__dirname, "build"),
-    library: "CytoFramework",
+    library: "CyFramework",
     libraryTarget: "umd",
-    filename: "cyto.js"
+    filename: "CyFramework.js"
   },
   externals: {
     "react":"React",
@@ -21,7 +21,7 @@ module.exports = {
       {
          test: /\.jsx?$/,
          exclude: /node_modules/,
-         loaders: ['react-hot', 'babel?presets[]=es2015&presets[]=react']
+         loaders: ['babel?presets[]=es2015']
       },
       {
         test: /\.scss$/,
