@@ -20,9 +20,7 @@ class CyFramework {
   /* Render a component into the DOM at element. Can additionally accept properties to be passed to the component, and also
    * children to be passed for the component to render.
    */
-  render(module, element) { render(element, module, {}, []) }
-  render(module, element, properties) { render(element, module, properties, []) }
-  render(module, element, properties, children) {
+  render(module, element, properties = {}, children = []) {
     ReactDOM.render(
       React.createElement(Provider, {store: this.store},
         React.createElement(module.component, properties, children)
@@ -31,14 +29,13 @@ class CyFramework {
     return undefined
   }
 
-  /* Return the entire store */
-  getStore() {
-    return this.store.getState()
-  }
-
-  /* Get a subStore by name from the store */
-  getStore(storeName) {
-    return this.store.getState()[storeName]
+  /* Get store state or get substore state by name of substore */
+  getStore(storeName = null) {
+    if (!storeName) {
+      return this.store.getState()
+    } else {
+      return this.store.getState()[storeName]
+    }
   }
 
   /* Dispatch an action or actionCreator thunk to the store to change store state */

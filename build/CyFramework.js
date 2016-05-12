@@ -106,55 +106,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  _createClass(CyFramework, [{
 	    key: 'render',
-	    value: function (_render) {
-	      function render(_x, _x2) {
-	        return _render.apply(this, arguments);
-	      }
+	    value: function render(module, element) {
+	      var properties = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+	      var children = arguments.length <= 3 || arguments[3] === undefined ? [] : arguments[3];
 
-	      render.toString = function () {
-	        return _render.toString();
-	      };
-
-	      return render;
-	    }(function (module, element) {
-	      render(element, module, {}, []);
-	    })
-	  }, {
-	    key: 'render',
-	    value: function (_render2) {
-	      function render(_x3, _x4, _x5) {
-	        return _render2.apply(this, arguments);
-	      }
-
-	      render.toString = function () {
-	        return _render2.toString();
-	      };
-
-	      return render;
-	    }(function (module, element, properties) {
-	      render(element, module, properties, []);
-	    })
-	  }, {
-	    key: 'render',
-	    value: function render(module, element, properties, children) {
 	      _reactDom2.default.render(_react2.default.createElement(_reactRedux.Provider, { store: this.store }, _react2.default.createElement(module.component, properties, children)), element);
 	      return undefined;
 	    }
 
-	    /* Return the entire store */
+	    /* Get store state or get substore state by name of substore */
 
 	  }, {
 	    key: 'getStore',
 	    value: function getStore() {
-	      return this.store.getState();
-	    }
+	      var storeName = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
 
-	    /* Get a subStore by name from the store */
-
-	  }, {
-	    key: 'getStore',
-	    value: function getStore(storeName) {
-	      return this.store.getState()[storeName];
+	      if (!storeName) {
+	        return this.store.getState();
+	      } else {
+	        return this.store.getState()[storeName];
+	      }
 	    }
 
 	    /* Dispatch an action or actionCreator thunk to the store to change store state */
