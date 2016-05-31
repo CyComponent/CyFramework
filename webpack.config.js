@@ -1,6 +1,8 @@
 var path = require('path');
 
 module.exports = {
+  cache: true,
+  devtool: 'source-map',
   entry: path.resolve(__dirname, "src/CyFramework.js"),
   output: {
     path: path.resolve(__dirname, "build"),
@@ -19,21 +21,10 @@ module.exports = {
   module: {
     loaders: [
       {
-         test: /\.jsx?$/,
-         exclude: /node_modules/,
-         loaders: ['babel?presets[]=es2015']
-      },
-      {
-        test: /\.scss$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ["style", "css", "sass"]
-      },
-      {
-        test: /\.(png|jpg|jpeg|svg)$/,
-        exclude: /node_modules/,
-        loaders: ["url"]
+        loaders: ['babel?presets[]=es2015']
       }
-
     ]
   }
-};
+}

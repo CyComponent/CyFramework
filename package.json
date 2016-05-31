@@ -1,29 +1,34 @@
 {
   "name": "CyFramework",
+  "author": "Eric Sage <eric.david.sage@gmail.com>",
   "version": "0.0.2",
   "description": "The Cytoscape front end framework.",
+  "license": "MIT",
+  "keywords": [],
   "main": "build/CyFramework.js",
-  "scripts": {
-    "build": "webpack --progress --colors",
-    "clean": "rm build/CyFramework.js"
-  },
+  "files": [
+    "webpack.config.js",
+    ".preprocessor.js",
+    ".travis.yml",
+    "build/*",
+    "src/*"
+  ],
+  "homepage": "https://github.com/CyComponent/CyFramework",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CyComponent/CyFramework.git"
+    "url": "https://github.com/CyComponent/CyFramework.git"
   },
-  "keywords": [
-    "cyframework",
-    "network",
-    "graph",
-    "biology"
-  ],
-  "author": "Eric Sage <eric.david.sage@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CyComponent/CyFramework/issues"
   },
-  "homepage": "https://github.com/CyComponent/CyFramework#readme",
-  "dependencies": {
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "clean": "rm build/*",
+    "lint": "eslint src/; exit 0",
+    "test": "eslint src/ && jest",
+    "coverage": "jest --coverage"
+  },
+   "dependencies": {
     "immutable": "^3.7.6",
     "react-redux": "^4.4.5",
     "redux": "^3.0.5",
@@ -36,14 +41,27 @@
   },
   "devDependencies": {
     "babel-core": "^6.3.21",
+    "babel-eslint": "^4.1.8",
+    "babel-jest": "^6.0.1",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
-    "css-loader": "^0.23.0",
-    "file-loader": "^0.8.5",
-    "node-sass": "^3.4.2",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
-    "url-loader": "^0.5.7",
+    "eslint": "^2.0.0",
+    "jest-cli": "^0.8.2",
+    "jest-webpack-alias": "^2.0.0",
     "webpack": "^1.12.9"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/.preprocessor.js"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "env": {
+      "es6": true,
+      "browser": true
+    }
   }
 }
