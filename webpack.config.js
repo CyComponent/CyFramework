@@ -17,7 +17,7 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    moduleDirectories: ["node_modules", "./src"]
+    moduleDirectories: ["node_modules", "./src"],
     extensions: ["", ".js", ".webpack.js"]
   },
   module: {
