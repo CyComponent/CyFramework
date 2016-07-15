@@ -9,7 +9,7 @@ The CyFramework orchestrates CyStores and CyComponents.
 A new instance of the CyFramework is created by supplying CyStores and CyFrameworks that want the CyFramework
 to manage their data models:
 
-```html
+```javascript
   #The CyFramework is managing the data models for NDExStore and NDExValet.
   var cyto = CyFramework.config([NDExStore, NDExValet])
 ```
