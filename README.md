@@ -17,7 +17,7 @@ to manage their data models:
 You can optionally provide default values for the data model, or load the state of a previous Framework instance
 using a second arguement.
 
-```html
+```javascript
   #Override a piece of the state. This object provided in the second parameter will be merged
   with the default state tree:
   var cyto = CyFramework.config([NDExStore], {
