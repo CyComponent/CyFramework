@@ -1,11 +1,16 @@
 # CyFramework
 The CyFramework orchestrates CyStores and CyComponents. 
+
+###config
 A new instance of the CyFramework is created by supplying CyStores and CyFrameworks that want the CyFramework
 to manage their data models:
 
+
+##Static Methods
+### config(Stores, DefaultState)
 ```html
   #The CyFramework is managing the data models for NDExStore and NDExValet.
-  var cyto = CyFramework([NDExStore, NDExValet])
+  var cyto = CyFramework.config([NDExStore, NDExValet])
 ```
 
 You can optionally provide default values for the data model, or load the state of a previous Framework instance
@@ -14,7 +19,7 @@ using a second arguement.
 ```html
   #Override a piece of the state. This object provided in the second parameter will be merged
   with the default state tree:
-  var cyto = CyFramework([NDExStore], {
+  var cyto = CyFramework.config([NDExStore], {
   ndex: {
     lucene: {
       searching: true
@@ -25,3 +30,5 @@ using a second arguement.
   into the framework like so:
   var cyto = CyFramework([NDExStore], previousState)
 ```
+##Instance Methods
+###render(component, node, parameters, children)
