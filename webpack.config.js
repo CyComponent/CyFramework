@@ -1,20 +1,15 @@
 var path = require('path')
 var webpack = require('webpack')
-
-module.exports = {
+module.exports = { 
   cache: true,
   devtool: 'source-map',
   entry: path.resolve(__dirname, "src/CyFramework.js"),
-  output: {
+  output: { 
     path: path.resolve(__dirname, "build"),
     library: "CyFramework",
     libraryTarget: "umd",
-    filename: "CyFramework.js"
-  },
-  externals: {
-    "react":"React",
-    "react-dom":"ReactDOM"
-  },
+    filename: "CyFramework.js" 
+  }, 
   resolve: {
     root: __dirname,
     moduleDirectories: ["node_modules", "./src"],
@@ -25,7 +20,15 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['babel?presets[]=es2015']
+        loader: 'babel?presets[]=es2015'
+      },
+      {
+        test: require.resolve("react"),
+        loader: 'expose?React'
+      },
+      {
+        test: require.resolve("react-dom"),
+        loader: 'expose?ReactDOM'
       }
     ]
   },

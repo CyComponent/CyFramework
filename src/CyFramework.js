@@ -23,7 +23,7 @@ class CyFramework {
   render(module, element, properties = {}, children = []) {
     ReactDOM.render(
       React.createElement(Provider, {store: this.store},
-        React.createElement(module.component, properties, children)
+        React.createElement(module, properties, children)
       ),
     element)
     return undefined
