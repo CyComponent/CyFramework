@@ -4,6 +4,14 @@ import { combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import createStore from './state/createStore'
 
+import 'react-addons-create-fragment'
+import 'react-addons-update'
+import 'react-addons-transition-group'
+import 'react-addons-pure-render-mixin'
+
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
+
 class CyFramework {
 
   /* Construct the CyFramework by combining stores into one object, and then creating a store using the initial state and store object. */
@@ -23,7 +31,7 @@ class CyFramework {
   render(module, element, properties = {}, children = []) {
     ReactDOM.render(
       React.createElement(Provider, {store: this.store},
-        React.createElement(module, properties, children)
+        React.createElement(module.default, properties, children)
       ),
     element)
     return undefined

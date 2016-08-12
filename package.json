@@ -22,7 +22,7 @@
     "url": "https://github.com/CyComponent/CyFramework/issues"
   },
   "scripts": {
-    "build": "webpack --progress --colors",
+    "build": "NODE_ENV=production webpack --progress --colors",
     "clean": "rm build/*",
     "lint": "eslint src/; exit 0",
     "test": "eslint src/ && jest",
@@ -40,6 +40,9 @@
     "jest-cli": "^0.8.2",
     "jest-webpack-alias": "^2.0.0",
     "react": "^15.3.0",
+    "react-addons-pure-render-mixin": "^15.3.0",
+    "react-addons-transition-group": "^15.3.0",
+    "react-addons-update": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "redux": "^3.0.5",
@@ -60,5 +63,9 @@
       "es6": true,
       "browser": true
     }
+  },
+  "dependencies": {
+    "react-addons-create-fragment": "^15.3.0",
+    "react-tap-event-plugin": "^1.0.0"
   }
 }
